@@ -5,8 +5,10 @@ public class BicycleApplication {
 
         MountainBike mountainBike = new MountainBike(0, 0);
         MountainBike mountainBike2 = new MountainBike(19, 0);
+        MountainBike mountainBike1 = new MountainBike(10, 48);
         RoadBike roadBike = new RoadBike(9, 0);
         RoadBike roadBike2 = new RoadBike(1, 0);
+        RoadBike roadBike1 = new RoadBike(5, 24);
 
         mountainBike.changeGear(2);
         mountainBike.changeGear(-1);
@@ -45,5 +47,8 @@ public class BicycleApplication {
         roadBike.applyBrakes(-101);
         roadBike.applyBrakes(-9);
 
+        System.out.println(Speedometer.chooseWinner(mountainBike1, roadBike1));
+        System.out.println(Speedometer.chooseWinner(1, 43));
+        System.out.println(Speedometer.chooseWinner(51, 51));
     }
 }
