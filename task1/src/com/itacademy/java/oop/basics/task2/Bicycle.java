@@ -1,7 +1,8 @@
 package com.itacademy.java.oop.basics.task2;
 
 public interface Bicycle {
-//TODO: check if speedup couldn't be implimented here..
+//TODO: check if speedup couldn't be implemented here..
+
     void changeGear(int newGear);
 
     void speedUp(int increment);
