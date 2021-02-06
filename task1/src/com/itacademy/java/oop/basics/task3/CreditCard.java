@@ -1,6 +1,6 @@
 package com.itacademy.java.oop.basics.task3;
 
-public class CreditCard extends Card{
+public class CreditCard extends Card {
     private double interest;
     private double credit;
 
@@ -20,15 +20,16 @@ public class CreditCard extends Card{
         return credit;
     }
 
+    //TODO this.getBalance() or getBalance() or somehow else get from super.?
     @Override
-    double credit(double amount) {
-        return super.credit(amount);
+    void debit(double amount) throws WithdrawExceptions {
+        double totalWithdrawAmount = amount + amount * 0.01 * interest;
+        if (getBalance() - totalWithdrawAmount > (-1*credit)){
+            setBalance(getBalance()-totalWithdrawAmount);
+        }else {
+            throw new WithdrawExceptions("Insufficient funds.");
+        }
+
     }
 
-    @Override
-    double debit(double amount, double atmBalance) {
-//        this.setBalance();
-
-        return this.getBalance();
-    }
 }

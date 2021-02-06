@@ -3,8 +3,8 @@ package com.itacademy.java.oop.basics.task3;
 public abstract class Card {
 
     private double balance;
-    private static String cardHolderName;
-    private static String cardNumber;
+    private String cardHolderName;
+    private String cardNumber;
 
     public Card(double balance, String cardHolderName, String cardNumber) {
         this.balance = balance;
@@ -20,14 +20,15 @@ public abstract class Card {
         this.balance = balance;
     }
 
-    double credit(double amount) {
-        return balance +=amount;
+    void credit(double amount) {
+         balance +=amount;
     }
 
 
-    double debit(double amount, double atmBalance) {
-        return balance;
+    void debit(double amount) throws WithdrawExceptions {
+        balance -= amount;
     }
 
-//    abstract double debit(double amount, double atmBalance);
+
+
 }
